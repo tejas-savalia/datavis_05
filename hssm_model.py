@@ -27,7 +27,7 @@ hssm_model = hssm.HSSM(data=comb_data[['rt', 'response', 'means', 'direction', '
             [{"name": "v",
               "formula": "v ~  C(bumps_)*C(cond)"},
               {"name": "a",
-              "formula": "a ~ C(cond)"},
+              "formula": "a ~ C(bumps_)*C(cond)"},
               {"name": "z",
               "formula": "z ~ C(direction) + C(diff_dir)"
               }
@@ -38,6 +38,6 @@ hssm_model = hssm.HSSM(data=comb_data[['rt', 'response', 'means', 'direction', '
               prior_settings="safe"
               )
 
-print('here, nonhierarchical drift interaction')
+print('here, nonhierarchical drift + a interaction')
 sample = hssm_model.sample(sampler = 'nuts_numpyro', cores = 4, chains = 4, target_accept = 0.95)
-az.to_netcdf(sample, 'modeling_results/hssm_results/model_3')
+az.to_netcdf(sample, 'modeling_results/hssm_results/model_4')
