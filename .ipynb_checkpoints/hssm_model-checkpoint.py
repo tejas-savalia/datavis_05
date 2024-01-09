@@ -18,22 +18,27 @@ comb_data = pd.concat([extract_data(fname) for fname in files]).reset_index(drop
 comb_data['bumps_'] = '0_noisy'
 comb_data.loc[comb_data['bumps'] == 'single', 'bumps_'] = '1_single'
 comb_data.loc[comb_data['bumps'] == 'center', 'bumps_'] = '2_center'
+comb_data['participant_id'] = comb_data['participant']
 print('here')
 
 # hssm_model = hssm.HSSM(data=comb_data[['participant', 'rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference']])
-hssm_model = hssm.HSSM(data=comb_data[['participant', 'rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference']], 
+hssm_model = hssm.HSSM(data=comb_data[['participant_id', 'rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference', 'cond']], 
             include=
             [{"name": "v",
               "formula": "v ~  C(bumps_)"},
-              # {"name": "t", 
-              #  "formula" : "t ~ (1|participant)"},
               {"name": "a",
-               "formula": "a ~ difference"},
+              "formula": "a ~ C(cond)"},
               {"name": "z",
               "formula": "z ~ C(direction) + C(diff_dir)"
               }
-              ])
+              ],
+              hierarchical = True,
+              p_outlier = 0.05,
+              lapse=bmb.Prior("Uniform", lower=0.0, upper=20.0),
+              loglik_kind = "approx_differentiable",
+              prior_settings="safe"
+              )
 
-print('here')
-sample = hssm_model.sample()
-az.to_netcdf(sample, 'modeling_results/hssm_results/model_1')
+print('here, hierarchical no direction')
+sample = hssm_model.sample(sampler = 'nuts_numpyro', cores = 4, chains = 4, target_accept = 0.95)
+az.to_netcdf(sample, 'modeling_results/hssm_results/model_0')
