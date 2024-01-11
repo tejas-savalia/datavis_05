@@ -6,7 +6,7 @@ hssm_model = hssm.HSSM(data=comb_data[['participant_id', 'rt', 'response', 'mean
               {"name": "a",
               "formula": "a ~ C(cond)"},
               {"name": "z",
-              "formula": "z ~ C(direction) + C(diff_dir)"
+              "formula": "z ~ C(direction) + C(diff_dir) +  direction"
               }
               ],
               hierarchical = True,
@@ -18,7 +18,7 @@ hssm_model = hssm.HSSM(data=comb_data[['participant_id', 'rt', 'response', 'mean
 
 
 # Model 1
-## Need to rerun this one, accidentally overwrote.
+<!-- ## Need to rerun this one, accidentally overwrote. -->
 Fully converged after removing the direction factor.
 
 hssm_model = hssm.HSSM(data=comb_data[[ 'rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference', 'cond']], 
@@ -39,20 +39,18 @@ hssm_model = hssm.HSSM(data=comb_data[[ 'rt', 'response', 'means', 'direction', 
               
 
 
-
-
 # Model 2
-This one did not converge.
-hssm_model = hssm.HSSM(data=comb_data[[ 'rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference', 'cond']], 
+hssm_model = hssm.HSSM(data=comb_data[['participant_id', 'rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference', 'cond']], 
             include=
             [{"name": "v",
-              "formula": "v ~  C(bumps_) + C(cond)"},
+              "formula": "v ~  C(bumps_)"},
               {"name": "a",
-              "formula": "a ~ 0 + difference"},
+              "formula": "a ~ C(cond)"},
               {"name": "z",
-              "formula": "z ~ C(direction) + C(diff_dir)"
+              "formula": "z ~ C(direction) + C(diff_dir) +  direction"
               }
               ],
+              hierarchical = True,
               p_outlier = 0.05,
               lapse=bmb.Prior("Uniform", lower=0.0, upper=20.0),
               loglik_kind = "approx_differentiable",
@@ -87,6 +85,23 @@ hssm_model = hssm.HSSM(data=comb_data[['rt', 'response', 'means', 'direction', '
               "formula": "a ~ C(bumps_)*C(cond)"},
               {"name": "z",
               "formula": "z ~ C(direction) + C(diff_dir)"
+              }
+              ],
+              p_outlier = 0.05,
+              lapse=bmb.Prior("Uniform", lower=0.0, upper=20.0),
+              loglik_kind = "approx_differentiable",
+              prior_settings="safe"
+              )
+
+# Model 5: With direction in starting point. Returning likelihoods
+hssm_model = hssm.HSSM(data=comb_data[['rt', 'response', 'means', 'direction', 'bumps_', 'diff_dir', 'difference', 'cond']], 
+            include=
+            [{"name": "v",
+              "formula": "v ~  C(bumps_)*C(cond)"},
+              {"name": "a",
+              "formula": "a ~ C(bumps_)*C(cond)"},
+              {"name": "z",
+              "formula": "z ~ C(direction) + C(diff_dir) +  difference"
               }
               ],
               p_outlier = 0.05,
