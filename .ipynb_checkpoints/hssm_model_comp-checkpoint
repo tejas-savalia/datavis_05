@@ -1,0 +1,9 @@
+\begin{tabular}{lrrrrrrrll}
+\toprule
+{} &  rank &     elpd\_waic &     p\_waic &   elpd\_diff &    weight &          se &        dse &  warning & scale \\
+\midrule
+v\_interact    &     0 & -21005.745994 &  18.800636 &    0.000000 &  0.911991 &  212.064813 &   0.000000 &    False &   log \\
+v\_additive    &     1 & -21169.202295 &  43.041695 &  163.456301 &  0.000000 &  213.602014 &  17.240248 &    False &   log \\
+no\_depentence &     2 & -21323.397386 &  14.072727 &  317.651392 &  0.088009 &  210.109464 &  27.394847 &    False &   log \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,10 @@
+\begin{tabular}{lrrr}
+\toprule
+{} &  rank &     p\_waic &    weight \\
+\midrule
+accuracy \textasciitilde  Choice Format*Shape + Global Extremum Direction*Shift Direction + Shift Magnitude     &     0 &  13.979604 &  0.844371 \\
+accuracy \textasciitilde  Choice Format*Shape + Global Extremum Direction + Shift Direction*Shift Magnitude     &     1 &  14.142625 &  0.155629 \\
+accuracy \textasciitilde  Choice Format*Shape + Global Extremum Direction + Shift Direction + Shift Magnitude   &     2 &  13.229515 &  0.000000 \\
+accuracy \textasciitilde  Choice Format + Shape + Global Extremum Direction + Shift Direction + Shift Magnitude &     3 &   8.986326 &  0.000000 \\
+\bottomrule
+\end{tabular}

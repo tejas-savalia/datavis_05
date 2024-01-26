@@ -1,0 +1,19 @@
+\begin{tabular}{lrrrr}
+\toprule
+{} &   mean &     sd &  hdi\_2.5\% &  hdi\_97.5\% \\
+\midrule
+Intercept                              &  0.896 &  0.168 &     0.560 &      1.219 \\
+C(diff\_dir)[1.0]                       & -0.114 &  0.146 &    -0.396 &      0.174 \\
+means                                  & -0.004 &  0.002 &    -0.009 &      0.001 \\
+C(direction)[1.0]                      & -0.040 &  0.046 &    -0.133 &      0.048 \\
+shape[single\_extremum]                 &  0.963 &  0.098 &     0.769 &      1.145 \\
+shape[three\_extrema]                   &  0.975 &  0.099 &     0.779 &      1.167 \\
+cond[numerical]                        &  0.274 &  0.110 &     0.059 &      0.484 \\
+cond[slider]                           &  0.279 &  0.115 &     0.060 &      0.509 \\
+shape:cond[single\_extremum, numerical] & -1.447 &  0.140 &    -1.721 &     -1.182 \\
+shape:cond[single\_extremum, slider]    & -1.547 &  0.142 &    -1.826 &     -1.268 \\
+shape:cond[three\_extrema, numerical]   & -1.139 &  0.138 &    -1.397 &     -0.855 \\
+shape:cond[three\_extrema, slider]      & -1.208 &  0.144 &    -1.496 &     -0.940 \\
+difference                             & -0.005 &  0.007 &    -0.019 &      0.009 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,21 @@
+\begin{tabular}{lrrrr}
+\toprule
+{} &   mean &     sd &  hdi\_2.5\% &  hdi\_97.5\% \\
+\midrule
+Intercept                                                           &  0.840 &  0.051 &     0.742 &      0.942 \\
+means                                                               &  0.001 &  0.001 &    -0.001 &      0.002 \\
+Shape[single\_extremum]                                              & -0.534 &  0.032 &    -0.600 &     -0.476 \\
+Shape[three\_extrema]                                                & -0.525 &  0.032 &    -0.590 &     -0.466 \\
+Choice Format[numerical]                                            & -0.582 &  0.036 &    -0.660 &     -0.518 \\
+Choice Format[slider]                                               & -0.284 &  0.039 &    -0.363 &     -0.210 \\
+Shape:Choice Format[single\_extremum, numerical]                     &  0.509 &  0.042 &     0.426 &      0.589 \\
+Shape:Choice Format[single\_extremum, slider]                        &  0.474 &  0.047 &     0.388 &      0.571 \\
+Shape:Choice Format[three\_extrema, numerical]                       &  0.465 &  0.042 &     0.385 &      0.548 \\
+Shape:Choice Format[three\_extrema, slider]                          &  0.531 &  0.046 &     0.443 &      0.622 \\
+Global Extremum Direction[Global Maximum]                           & -0.040 &  0.018 &    -0.077 &     -0.006 \\
+Shift Direction[Positive]                                           & -0.017 &  0.044 &    -0.101 &      0.067 \\
+Global Extremum Direction:Shift Direction[Global Maximum, Positive] &  0.064 &  0.025 &     0.015 &      0.110 \\
+Shift Magnitude                                                     & -0.000 &  0.002 &    -0.004 &      0.004 \\
+rt\_lam                                                              &  3.479 &  0.045 &     3.392 &      3.566 \\
+\bottomrule
+\end{tabular}

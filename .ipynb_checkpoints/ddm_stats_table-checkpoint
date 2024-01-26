@@ -1,0 +1,21 @@
+\begin{tabular}{lrrrr}
+\toprule
+{} &   mean &     sd &  hdi\_2.5\% &  hdi\_97.5\% \\
+\midrule
+v\_cond[numerical]                        &  0.217 &  0.045 &     0.131 &      0.306 \\
+v\_cond[slider]                           &  0.106 &  0.041 &     0.026 &      0.188 \\
+v\_shape[single\_extremum]                 &  0.581 &  0.040 &     0.503 &      0.659 \\
+v\_shape[three\_extrema]                   &  0.540 &  0.040 &     0.463 &      0.619 \\
+v\_cond:shape[numerical, single\_extremum] & -0.776 &  0.059 &    -0.901 &     -0.667 \\
+v\_cond:shape[numerical, three\_extrema]   & -0.541 &  0.059 &    -0.658 &     -0.427 \\
+v\_cond:shape[slider, single\_extremum]    & -0.763 &  0.057 &    -0.877 &     -0.652 \\
+v\_cond:shape[slider, three\_extrema]      & -0.594 &  0.055 &    -0.702 &     -0.489 \\
+v\_C(direction)[1.0]                      & -0.023 &  0.023 &    -0.067 &      0.022 \\
+v\_C(diff\_dir)[1.0]                       & -0.036 &  0.065 &    -0.165 &      0.091 \\
+v\_difference                             & -0.003 &  0.003 &    -0.010 &      0.003 \\
+z                                        &  0.505 &  0.004 &     0.498 &      0.513 \\
+a                                        &  1.081 &  0.006 &     1.070 &      1.093 \\
+t                                        &  0.328 &  0.004 &     0.320 &      0.337 \\
+v\_Intercept                              &  0.269 &  0.046 &     0.179 &      0.360 \\
+\bottomrule
+\end{tabular}

@@ -1,0 +1,10 @@
+\begin{tabular}{lrrr}
+\toprule
+{} &  rank &     p\_waic &        weight \\
+\midrule
+rt \textasciitilde  Choice Format*Shape + Global Extremum Direction + Shift Direction*Shift Magnitude     &     0 &  22.704415 &  6.948083e-01 \\
+rt \textasciitilde  Choice Format*Shape + Global Extremum Direction*Shift Direction + Shift Magnitude     &     1 &  22.516633 &  1.976044e-01 \\
+rt \textasciitilde  Choice Format*Shape + Global Extremum Direction + Shift Direction + Shift Magnitude   &     2 &  21.455311 &  3.737521e-14 \\
+rt \textasciitilde  Choice Format + Shape + Global Extremum Direction + Shift Direction + Shift Magnitude &     3 &  15.428767 &  1.075874e-01 \\
+\bottomrule
+\end{tabular}
